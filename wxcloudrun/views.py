@@ -64,16 +64,22 @@ def responseMsg():
             help += "003-<a href='https://mubu.com/doc/LYdGMKtto'>IT架构图</a>\n"
             help += "004-<a href='https://mp.weixin.qq.com/mp/homepage?__biz=Mzg4MjAyMDgzMQ==&hid=1&sn=ce7139573c267c56ae45f026c4242045'>LinuxMan往期目录</a>\n"
 
-            content = help
-            retParams = {
-                "ToUserName": params["FromUserName"],
-                "FromUserName": params["ToUserName"],
-                "CreateTime": int(time.time()),
-                "MsgType": "text",
-                "Content": content
-            }
             # return make_succ_response(json.dumps(params))
-            if params["MsgType"] == "text" :
+            if params["MsgType"] == "text":
+                keyword = params["content"]
+                if keyword == "help":
+                    content = help
+                else:
+                    content = "Link1：<a href='https://jaywcjlove.gitee.io/linux-command/c/" + keyword + ".html'>"+ keyword +"</a>\n"
+                    content = "Link2：<a href='https://www.linuxcool.com/"+ keyword +"'>"+ keyword +"</a>\n"
+                    content = "Link3：<a href='https://man.linuxde.net/"+ keyword +"'>"+ keyword +"</a>"
+                retParams = {
+                    "ToUserName": params["FromUserName"],
+                    "FromUserName": params["ToUserName"],
+                    "CreateTime": int(time.time()),
+                    "MsgType": "text",
+                    "Content": content
+                }
                 return Response(json.dumps(retParams), mimetype='application/json')
             else:
                 return make_succ_response(json.dumps(params))
