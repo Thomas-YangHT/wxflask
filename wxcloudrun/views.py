@@ -35,7 +35,7 @@ def responseMsg():
             return make_succ_response("success")
     else:
         if request.headers.get("x-wx-source"):
-            content = ""
+            content = "test"
             retParams = {
                 "ToUserName": params["FromUserName"],
                 "FromUserName": params["ToUserName"],
