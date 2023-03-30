@@ -34,7 +34,7 @@ def responseMsg():
             return make_succ_response("success")
     else:
         if request.headers.get("x-wx-source"):
-            help = "请输入要查询的命令：\n===================\n如: ls ---返回用法链接\n"
+            help = "请输入要查询的命令:\n===================\n如: ls ---返回用法链接\n"
             help += "001-<a href='https://mubu.com/doc/3xyI7zD_Yo'>CmdCheetSheet</a>\n"
             help += "002-<a href='https://mubu.com/doc/3y4NwBXCxo'>简述shell流程控制</a>\n"
             help += "003-<a href='https://mubu.com/doc/2-KsPtqeKo'>国内安装源总结</a>\n"
@@ -47,18 +47,18 @@ def responseMsg():
             help += "010-<a href='https://mubu.com/doc/4pNs1XBo_f9'>安全扫描</a>\n"
             help += "011-<a href='https://mubu.com/doc/3Bxi3I9DCo'>Raspberry pi4使用记录</a>\n"
             help += "012-<a href='https://mubu.com/doc/1XiLnBztCo'>K8S启动盘使用帮助</a>\n"
-            help += "\n待完成waiting：\n"
+            help += "\n待完成waiting:\n"
             help += "013-<a href=''>试用pandas分析数据</a>\n"
             help += "014-<a href=''>性能优化</a>\n"
             help += "015-<a href=''>Python实例</a>\n"
             help += "016-<a href=''>日志收集系统</a>\n"
             help += "017-<a href=''>来自编个监控系统</a>\n"
             help += "018-<a href=''>从win10到centos7</a>\n"
-            help += "\nCloudMan 每天5分钟系列：\n"
+            help += "\nCloudMan 每天5分钟系列:\n"
             help += "<a href='https://mp.weixin.qq.com/s/7o8QxGydMTUe4Q7Tz46Diw'>[Docker教程]</a>\n"
             help += "<a href='https://mp.weixin.qq.com/s/RK6DDc8AUBklsUS7rssW2w'>[Kubernetes教程]</a>\n"
             help += "<a href='https://mp.weixin.qq.com/s/QtdMkt9giEEnvFTQzO9u7g'>[OpenStack教程]</a>\n"
-            help += "\n其它：\n"
+            help += "\n其它:\n"
             help += "001-<a href='https://mubu.com/doc/3u65WbvQsp'>SimpleComputerWords</a>\n"
             help += "002-<a href='https://mubu.com/doc/3mtscGgyIo'>简述测试概念与工具</a>\n"
             help += "003-<a href='https://mubu.com/doc/LYdGMKtto'>IT架构图</a>\n"
@@ -70,9 +70,9 @@ def responseMsg():
                 if keyword == "help":
                     content = help
                 else:
-                    content = "Link1：<a href='https://jaywcjlove.gitee.io/linux-command/c/" + keyword + ".html'>"+ keyword +"</a>\n"
-                    content = "Link2：<a href='https://www.linuxcool.com/"+ keyword +"'>"+ keyword +"</a>\n"
-                    content = "Link3：<a href='https://man.linuxde.net/"+ keyword +"'>"+ keyword +"</a>"
+                    content = "Link1:<a href='https://jaywcjlove.gitee.io/linux-command/c/" + keyword + ".html'>"+ keyword +"</a>\n"
+                    content += "Link2:<a href='https://www.linuxcool.com/"+ keyword +"'>"+ keyword +"</a>\n"
+                    content += "Link3:<a href='https://man.linuxde.net/"+ keyword +"'>"+ keyword +"</a>"
                 retParams = {
                     "ToUserName": params["FromUserName"],
                     "FromUserName": params["ToUserName"],
