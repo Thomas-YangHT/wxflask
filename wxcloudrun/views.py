@@ -71,15 +71,18 @@ def responseMsg():
                 if keyword == "help":
                     content = help
                 else:
-                    content = "答1:<a href='https://jaywcjlove.gitee.io/linux-command/c/" + keyword + ".html'>"+ keyword +"</a>\n"
-                    content += "Link2:<a href='https://www.linuxcool.com/"+ keyword +"'>"+ keyword +"</a>\n"
-                    content += "Link3:<a href='https://man.linuxde.net/"+ keyword +"'>"+ keyword +"</a>"
+                    content = "答1:<a href='https://jaywcjlove.gitee.io/linux-command/c/" + \
+                        keyword + ".html'>" + keyword + "</a>\n"
+                    content += "Link2:<a href='https://www.linuxcool.com/" + \
+                        keyword + "'>" + keyword + "</a>\n"
+                    content += "Link3:<a href='https://man.linuxde.net/" + \
+                        keyword + "'>" + keyword + "</a>"
                 retParams = {
                     "ToUserName": params["FromUserName"],
                     "FromUserName": params["ToUserName"],
                     "CreateTime": int(time.time()),
                     "MsgType": "text",
-                    "Content": json.loads(content) 
+                    "Content": content
                 }
                 return Response(json.dumps(retParams), mimetype='application/json')
             else:
