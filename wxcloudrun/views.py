@@ -46,7 +46,7 @@ def responseMsg():
             help += "009-<a href='https://mubu.com/doc/3uK_TGfrXo'>解决故障[更新中]</a>\n"
             help += "010-<a href='https://mubu.com/doc/4pNs1XBo_f9'>安全扫描</a>\n"
             help += "011-<a href='https://mubu.com/doc/3Bxi3I9DCo'>Raspberry pi4使用记录</a>\n"
-            help += "012-<a href='https://mubu.com/doc/1XiLnBztCo'>K8S启动盘使用帮助</a>\n"
+            # help += "012-<a href='https://mubu.com/doc/1XiLnBztCo'>K8S启动盘使用帮助</a>\n"
             # help += "\n待完成waiting:\n"
             # help += "013-<a href=''>试用pandas分析数据</a>\n"
             # help += "014-<a href=''>性能优化</a>\n"
