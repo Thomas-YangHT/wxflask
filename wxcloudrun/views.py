@@ -84,7 +84,7 @@ def responseMsg():
                     "MsgType": "text",
                     "Content": content
                 }
-                return Response(json.dumps(retParams), mimetype='application/json')
+                return Response(json.dumps(retParams,ensure_ascii=False), mimetype='application/json')
             else:
                 return make_succ_response(json.dumps(params))
         else:
