@@ -5,6 +5,9 @@ from wxcloudrun.dao import delete_counterbyid, query_counterbyid, insert_counter
 from wxcloudrun.model import Counters
 from wxcloudrun.response import make_succ_empty_response, make_succ_response, make_err_response
 import json
+import time
+from flask import Response
+
 
 
 @app.route('/')
@@ -32,7 +35,16 @@ def responseMsg():
             return make_succ_response("success")
     else:
         if request.headers.get("x-wx-source"):
-            return make_succ_response(json.dumps(params))
+            content = ""
+            retParams = {
+                "ToUserName": params["FromUserName"],
+                "FromUserName": params["ToUserName"],
+                "CreateTime": int(time.time()), 
+                "MsgType": "text",
+                "Content": content
+            }
+            # return make_succ_response(json.dumps(params))
+            return Response(json.dumps(retParams), mimetype='application/json')
         else:
             return make_err_response('缺少action参数')
 
