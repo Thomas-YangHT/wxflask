@@ -79,7 +79,7 @@ def responseMsg():
                     "FromUserName": params["ToUserName"],
                     "CreateTime": int(time.time()),
                     "MsgType": "text",
-                    "Content": json.loads(content)
+                    "Content": json.loads(content) 
                 }
                 return Response(json.dumps(retParams), mimetype='application/json')
             else:
