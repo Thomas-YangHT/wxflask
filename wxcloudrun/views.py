@@ -79,9 +79,9 @@ def responseMsg():
                     "FromUserName": params["ToUserName"],
                     "CreateTime": int(time.time()),
                     "MsgType": "text",
-                    "Content": content.encode('utf-8').decode('unicode-escape')
+                    "Content": content
                 }
-                return Response(json.dumps(retParams), mimetype='application/json')
+                return Response(json.dumps(retParams.encode('utf-8').decode('unicode-escape')), mimetype='application/json')
             else:
                 return make_succ_response(json.dumps(params))
         else:
