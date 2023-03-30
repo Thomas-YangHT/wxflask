@@ -14,6 +14,25 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/api/responseMsg', methods=['POST'])
+def responseMsg():
+    """
+    :return: 文本消息
+    """
+    # 获取请求体参数
+    params = request.get_json()
+
+    # 检查action参数
+    if 'action' in params:
+        # 按照不同的action的值，进行不同的操作
+        action = params['action']
+        # 执行自增操作
+        if action == 'CheckContainerPath':
+           return make_succ_response("success")
+    else:
+        # return make_err_response('缺少action参数')
+
+
 @app.route('/api/count', methods=['POST'])
 def count():
     """
