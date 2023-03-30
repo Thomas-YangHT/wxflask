@@ -66,7 +66,7 @@ def responseMsg():
 
             # return make_succ_response(json.dumps(params))
             if params["MsgType"] == "text":
-                keyword = params["content"]
+                keyword = params["Content"]
                 if keyword == "help":
                     content = help
                 else:
