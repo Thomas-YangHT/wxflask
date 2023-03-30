@@ -28,10 +28,12 @@ def responseMsg():
         action = params['action']
         # 执行自增操作
         if action == 'CheckContainerPath':
-           return make_succ_response("success")
+            return make_succ_response("success")
     else:
-        return make_err_response('缺少action参数')
-
+        if request.headers.get("x-wx-source"):
+            return make_succ_response(request.headers.get("x-wx-source"))
+        else:
+            return make_err_response('缺少action参数')
 
 
 @app.route('/api/count', methods=['POST'])
