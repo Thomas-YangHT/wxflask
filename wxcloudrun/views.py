@@ -4,6 +4,7 @@ from run import app
 from wxcloudrun.dao import delete_counterbyid, query_counterbyid, insert_counter, update_counterbyid
 from wxcloudrun.model import Counters
 from wxcloudrun.response import make_succ_empty_response, make_succ_response, make_err_response
+import json
 
 
 @app.route('/')
@@ -31,7 +32,7 @@ def responseMsg():
             return make_succ_response("success")
     else:
         if request.headers.get("x-wx-source"):
-            return make_succ_response("abc")
+            return make_succ_response(json.dumps(params))
         else:
             return make_err_response('缺少action参数')
 
