@@ -47,14 +47,14 @@ def responseMsg():
             help += "010-<a href='https://mubu.com/doc/4pNs1XBo_f9'>安全扫描</a>\n"
             help += "011-<a href='https://mubu.com/doc/3Bxi3I9DCo'>Raspberry pi4使用记录</a>\n"
             help += "012-<a href='https://mubu.com/doc/1XiLnBztCo'>K8S启动盘使用帮助</a>\n"
-            # help += "\n待完成waiting:\n"
-            # help += "013-<a href=''>试用pandas分析数据</a>\n"
-            # help += "014-<a href=''>性能优化</a>\n"
-            # help += "015-<a href=''>Python实例</a>\n"
-            # help += "016-<a href=''>日志收集系统</a>\n"
-            # help += "017-<a href=''>来自编个监控系统</a>\n"
-            # help += "018-<a href=''>从win10到centos7</a>\n"
-            # help += "\nCloudMan 每天5分钟系列:\n"
+            help += "\n待完成waiting:\n"
+            help += "013-<a href=''>试用pandas分析数据</a>\n"
+            help += "014-<a href=''>性能优化</a>\n"
+            help += "015-<a href=''>Python实例</a>\n"
+            help += "016-<a href=''>日志收集系统</a>\n"
+            help += "017-<a href=''>来自编个监控系统</a>\n"
+            help += "018-<a href=''>从win10到centos7</a>\n"
+            help += "\nCloudMan 每天5分钟系列:\n"
             # help += "<a href='https://mp.weixin.qq.com/s/7o8QxGydMTUe4Q7Tz46Diw'>[Docker教程]</a>\n"
             # help += "<a href='https://mp.weixin.qq.com/s/RK6DDc8AUBklsUS7rssW2w'>[Kubernetes教程]</a>\n"
             # help += "<a href='https://mp.weixin.qq.com/s/QtdMkt9giEEnvFTQzO9u7g'>[OpenStack教程]</a>\n"
@@ -64,7 +64,6 @@ def responseMsg():
             # help += "003-<a href='https://mubu.com/doc/LYdGMKtto'>IT架构图</a>\n"
             # help += "004-<a href='https://mp.weixin.qq.com/mp/homepage?__biz=Mzg4MjAyMDgzMQ==&hid=1&sn=ce7139573c267c56ae45f026c4242045'>LinuxMan往期目录</a>\n"
 
-            # return make_succ_response(json.dumps(params))
             print(help)
             if params["MsgType"] == "text":
                 keyword = params["Content"]
