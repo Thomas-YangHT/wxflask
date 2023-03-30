@@ -31,7 +31,7 @@ def responseMsg():
             return make_succ_response("success")
     else:
         if request.headers.get("x-wx-source"):
-            return make_succ_response(request.headers.get("x-wx-source"))
+            return make_succ_response("abc")
         else:
             return make_err_response('缺少action参数')
 
