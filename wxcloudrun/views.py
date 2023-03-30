@@ -31,7 +31,7 @@ def responseMsg():
            return make_succ_response("success")
     else:
         return make_err_response('缺少action参数')
-        
+
 
 
 @app.route('/api/count', methods=['POST'])
