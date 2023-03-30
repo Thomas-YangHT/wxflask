@@ -14,7 +14,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/api/responseMsg', methods=['POST'])
+@app.route('/api/msg', methods=['POST'])
 def responseMsg():
     """
     :return: 文本消息
@@ -30,7 +30,8 @@ def responseMsg():
         if action == 'CheckContainerPath':
            return make_succ_response("success")
     else:
-        # return make_err_response('缺少action参数')
+        return make_err_response('缺少action参数')
+        
 
 
 @app.route('/api/count', methods=['POST'])
